@@ -1,14 +1,28 @@
-# HaamCall v3
+<p align="center">
+    <a href="https://github.com/rezaseydanloo/haamcall" >
+        <img src="./assets/haamcall-logo.png" alt="Logo" >
+    </a>
+</p>
 
-**Language / زبان:** [English](#english) | [فارسی](#فارسی)
+<h3 align="center">HaamCall v3</h3>
+<h5 align="center">HaamCall v3 is a lightweight browser-based meeting app for fast team collaboration.</h5>
+
+<!-- **Language / زبان:** [English](#english) | [فارسی](#فارسی) -->
 
 ---
 
-## English
+## Table of Contents
 
-HaamCall v3 is a lightweight browser-based meeting app for fast team collaboration.
+- [Architecture](#architecture)
+- [Impact on Meeting Quality](#impact-on-meeting-quality)
+- [What Kind of Meetings You Can Have](#what-kind-of-meetings-you-can-have)
+- [Key Features](#key-features)
+- [Usage](#usage)
+- [Project Evolution](#project-evolution)
+- [Security](#security)
+- [Tech Stack](#tech-stack)
 
-## Architecture
+## 🏗️ Architecture
 
 HaamCall uses a **real-time SFU architecture** to keep meetings smooth as participants grow:
 
@@ -16,7 +30,7 @@ HaamCall uses a **real-time SFU architecture** to keep meetings smooth as partic
 - Backend service for room/session management
 - LiveKit SFU for real-time audio/video/screen share transport
 
-### Impact on Meeting Quality
+### 📈 Impact on Meeting Quality
 
 - **SFU-based media routing (LiveKit)** improves quality for group calls by avoiding full mesh peer-to-peer overhead.
 - **Adaptive video grid + active speaker highlighting** keeps focus clear in larger rooms.
@@ -24,7 +38,7 @@ HaamCall uses a **real-time SFU architecture** to keep meetings smooth as partic
 - **TURN support** helps participants behind strict NAT/firewalls join more successfully.
 - **State isolation with Zustand stores** keeps room UI responsive and predictable during rapid media events.
 
-## What Kind of Meetings You Can Have
+## 👥 What Kind of Meetings You Can Have
 
 - **1:1 quick calls** for instant check-ins.
 - **Small team standups** with camera/mic and chat.
@@ -32,7 +46,7 @@ HaamCall uses a **real-time SFU architecture** to keep meetings smooth as partic
 - **Presentation-style sessions** with screen sharing.
 - **Async-friendly sessions** using file upload/download and in-room chat.
 
-## Key Features
+## ✨ Key Features
 
 - Instant room creation + join by link
 - No account required for regular meetings
@@ -42,7 +56,79 @@ HaamCall uses a **real-time SFU architecture** to keep meetings smooth as partic
 - File sharing inside meeting rooms
 - Responsive UI for desktop and mobile
 
-## Security
+## 🚀 Usage
+
+Using HaamCall is designed to be simple and fast.
+
+### 🆕 Creating a Meeting Room
+
+1. Open the HaamCall landing page.
+2. Click **Create Room**.
+3. Allow camera and microphone access if prompted.
+4. Share the generated room link with other participants.
+5. Participants can join instantly using the link — no account required.
+
+### 🔗 Joining a Meeting
+
+1. Open the shared room link.
+2. Complete the **pre‑join camera and microphone check**.
+3. Click **Join Meeting** to enter the room.
+
+### 📱 Installing as a PWA
+
+HaamCall can be installed as a **Progressive Web App (PWA)** for a more native experience.
+
+Steps:
+
+1. Open HaamCall in a supported browser (Chrome, Edge, etc.).
+2. Click the **Install** button in the browser address bar.
+3. Launch HaamCall directly from your desktop or app launcher.
+
+The PWA version provides:
+
+- Faster startup
+- Standalone window mode
+- Better meeting workflow without browser UI distractions
+
+## 🔄 Project Evolution
+
+HaamCall has evolved through several major iterations as the architecture and feature set improved.
+
+| Version | Key Changes                                                                                                                                                                                  |
+| ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **v1**  | Initial prototype for browser-based meetings.                                                                                                                                                |
+| **v2**  | Switched to **WebRTC peer-to-peer (P2P)** connections using vanilla JavaScript. Added **file sharing inside meeting rooms**.                                                                 |
+| **v3**  | Migrated from **P2P to SFU architecture using LiveKit** for better scalability. Rebuilt the **entire UI using React + Vite + Tailwind** and introduced **Light Theme alongside Dark Theme**. |
+
+<h3 align="center">☀️ Light Mode</h3>
+
+<p align="center">
+  <img src="./assets/landing-desktop-light.png" width="1000"/>
+</p>
+
+<h3 align="center">🌙 Dark Mode</h3>
+
+<p align="center">
+  <img src="./assets/landing-desktop-dark.png" width="1000"/>
+</p>
+
+### ⚙️ Why the SFU Migration Matters
+
+Moving from **peer-to-peer (mesh)** to **SFU** significantly improves performance in group meetings.
+
+In P2P:
+
+- Each participant sends media to every other participant.
+- Bandwidth usage grows quickly as the room size increases.
+
+With **SFU (LiveKit)**:
+
+- Each participant sends a single media stream to the server.
+- The server forwards optimized streams to participants.
+
+This allows **larger rooms, more stable connections, and better overall call quality.**
+
+## 🔐 Security
 
 - Server-side room and session management (no direct client trust)
 - Admin panel protected with credential login and expiring sessions
@@ -50,62 +136,7 @@ HaamCall uses a **real-time SFU architecture** to keep meetings smooth as partic
 - Token-based room access issued by the backend before joining media sessions
 - Input validation and error boundaries for safer request/UI handling
 
-## Tech Stack
-
-- **Frontend:** React, TypeScript, Vite, Tailwind CSS, Zustand
-- **Backend:** NestJS, TypeScript
-- **Real-time media:** LiveKit (SFU), WebRTC, TURN (coturn)
-- **Infrastructure:** Docker, Docker Compose
-
----
-
-## فارسی
-
-هم‌کال v3 یک برنامه سبک مبتنی بر مرورگر برای برگزاری جلسات آنلاین و همکاری سریع بین اعضای تیم است.
-
-## معماری
-
-در HaamCall از **معماری real-time SFU** استفاده شده است تا با افزایش تعداد شرکت‌کنندگان، کیفیت جلسه پایدار و روان باقی بماند.
-
-- یک **Web app** برای تجربه جلسه در مرورگر
-- یک **Backend service** برای مدیریت room و session
-- استفاده از **LiveKit SFU** برای انتقال real-time صدا، تصویر و screen share
-
-### تأثیر بر کیفیت جلسه
-
-- استفاده از **SFU-based media routing (LiveKit)** باعث بهبود کیفیت تماس‌های گروهی می‌شود، زیرا سربار معماری full mesh peer-to-peer حذف می‌شود.
-- استفاده از **Adaptive video grid + active speaker highlighting** کمک می‌کند در اتاق‌های بزرگ تمرکز روی فردی که در حال صحبت است حفظ شود.
-- وجود **Reconnection handling + connection banners** باعث می‌شود در شبکه‌های ناپایدار اتصال کاربران پایدارتر مدیریت شود.
-- پشتیبانی از **TURN** کمک می‌کند کاربرانی که پشت NAT یا firewallهای سخت‌گیرانه هستند راحت‌تر به جلسه متصل شوند.
-- استفاده از **State isolation با Zustand stores** باعث می‌شود رابط کاربری اتاق هنگام رخ دادن رویدادهای سریع رسانه‌ای همچنان responsive و قابل پیش‌بینی باقی بماند.
-
-## نوع جلساتی که می‌توانید داشته باشید
-
-- برگزاری **تماس‌های سریع 1:1** برای هماهنگی‌های فوری
-- برگزاری **جلسات standup تیم‌های کوچک** با camera، mic و chat
-- ایجاد **اتاق‌های همکاری بزرگ‌تر** با layout تطبیقی شرکت‌کنندگان
-- برگزاری **جلسات ارائه** با استفاده از screen sharing
-- ایجاد **جلسات async-friendly** با امکان file upload/download و chat داخل اتاق
-
-## قابلیت‌های اصلی
-
-- ایجاد فوری room و امکان پیوستن از طریق لینک
-- عدم نیاز به account برای شرکت در جلسات معمولی
-- بررسی آماده بودن camera و mic قبل از ورود به جلسه
-- وجود کنترل‌های داخل جلسه شامل mic، camera، screen share و leave
-- امکان chat لحظه‌ای و مشاهده لیست شرکت‌کنندگان
-- قابلیت اشتراک فایل داخل اتاق جلسه
-- رابط کاربری responsive برای desktop و mobile
-
-## امنیت
-
-- مدیریت room و session در سمت server بدون اعتماد مستقیم به client
-- محافظت از Admin panel با credential login و sessionهای دارای زمان انقضا
-- پشتیبانی از TURN برای ایجاد اتصال امن و پایدار در شبکه‌های محدود
-- صدور token دسترسی به room توسط backend پیش از ورود به session رسانه‌ای
-- انجام input validation و استفاده از error boundaries برای مدیریت امن‌تر درخواست‌ها و رابط کاربری
-
-## Tech Stack
+## 🧰 Tech Stack
 
 - **Frontend:** React, TypeScript, Vite, Tailwind CSS, Zustand
 - **Backend:** NestJS, TypeScript
