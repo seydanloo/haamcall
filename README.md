@@ -7,7 +7,7 @@
 <h3 align="center">HaamCall v3</h3>
 <h5 align="center">HaamCall v3 is a lightweight browser-based meeting app for fast team collaboration.</h5>
 
-<!-- **Language / زبان:** [English](#english) | [فارسی](#فارسی) -->
+**Language / زبان:** [English](README.md) | [فارسی](README-fa.md)
 
 ---
 
