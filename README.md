@@ -14,14 +14,14 @@
 ## Table of Contents
 
 - [Architecture](#architecture)
-- [Impact on Meeting Quality](#impact-on-meeting-quality)
-- [What Kind of Meetings You Can Have](#what-kind-of-meetings-you-can-have)
+- [What Kind of Meetings You Can Have](#what-kind-of-meetings)
 - [Key Features](#key-features)
 - [Usage](#usage)
 - [Project Evolution](#project-evolution)
 - [Security](#security)
 - [Tech Stack](#tech-stack)
 
+<a id="architecture"></a>
 ## 🏗️ Architecture
 
 HaamCall uses a **real-time SFU architecture** to keep meetings smooth as participants grow:
@@ -38,6 +38,7 @@ HaamCall uses a **real-time SFU architecture** to keep meetings smooth as partic
 - **TURN support** helps participants behind strict NAT/firewalls join more successfully.
 - **State isolation with Zustand stores** keeps room UI responsive and predictable during rapid media events.
 
+<a id="what-kind-of-meetings"></a>
 ## 👥 What Kind of Meetings You Can Have
 
 - **1:1 quick calls** for instant check-ins.
@@ -46,6 +47,7 @@ HaamCall uses a **real-time SFU architecture** to keep meetings smooth as partic
 - **Presentation-style sessions** with screen sharing.
 - **Async-friendly sessions** using file upload/download and in-room chat.
 
+<a id="key-features"></a>
 ## ✨ Key Features
 
 - Instant room creation + join by link
@@ -56,6 +58,7 @@ HaamCall uses a **real-time SFU architecture** to keep meetings smooth as partic
 - File sharing inside meeting rooms
 - Responsive UI for desktop and mobile
 
+<a id="usage"></a>
 ## 🚀 Usage
 
 Using HaamCall is designed to be simple and fast.
@@ -90,6 +93,7 @@ The PWA version provides:
 - Standalone window mode
 - Better meeting workflow without browser UI distractions
 
+<a id="project-evolution"></a>
 ## 🔄 Project Evolution
 
 HaamCall has evolved through several major iterations as the architecture and feature set improved.
@@ -128,6 +132,7 @@ With **SFU (LiveKit)**:
 
 This allows **larger rooms, more stable connections, and better overall call quality.**
 
+<a id="security"></a>
 ## 🔐 Security
 
 - Server-side room and session management (no direct client trust)
@@ -136,6 +141,7 @@ This allows **larger rooms, more stable connections, and better overall call qua
 - Token-based room access issued by the backend before joining media sessions
 - Input validation and error boundaries for safer request/UI handling
 
+<a id="tech-stack"></a>
 ## 🧰 Tech Stack
 
 - **Frontend:** React, TypeScript, Vite, Tailwind CSS, Zustand
