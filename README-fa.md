@@ -7,7 +7,7 @@
 <h3 align="center">HaamCall v3</h3>
 <h5 align="center">برنامه جلسات آنلاین مبتنی بر مرورگر، سبک و سریع برای همکاری‌های تیمی.</h5>
 
-** زبان:** [English](README.md) | [فارسی](README-fa.md)
+ زبان: [English](README.md) | [فارسی](README-fa.md)
 
 ---
 
